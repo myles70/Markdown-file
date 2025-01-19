@@ -1,0 +1,24 @@
+''' mermaid 
+erDiagram
+  Product { NAMED- Buyer : allows
+  Product { 
+            string size  PK
+            string color
+            string width
+            
+   }
+  Customer { NAMED- Buyer : is
+  Customer { 
+            string firstname Pk
+            string lastname
+            
+  }
+  Sale {
+        String price Pk
+  }
+  Inventory {
+        string supply  Pk, FK  
+        string customer demand PK, FK
+  }
+
+  ("Products <br />sales")  ("customers <br />sales") ("products <br /> inventory")
