@@ -1,6 +1,6 @@
 ''' mermaid 
 erDiagram
-  Product { NAMED- Buyer : allows
+  Product { NAMED- Buyer : has
   Product { 
             string size  PK
             string color
@@ -15,10 +15,20 @@ erDiagram
   }
   Sale {
         String price Pk
+        String product
   }
   Inventory {
-        string supply  Pk, FK  
+        string shoe supplies  Pk, FK  
         string customer demand PK, FK
   }
 
-  ("Products <br />sales")  ("customers <br />sales") ("products <br /> inventory")
+  Products [<relationships><sales>:<relationship-label>]  customers [<relationship><sales>:<relationship-label>] products [<relationship>< inventory>:<relationship-label>]
+
+The first diagram entity is the products that descride the look of the shoes and it relationship to sales how much are the look of the shoes are worth for the price. 
+It supports for the bussiness operation to understand the value of the shoes being sold at the right price. 
+The second entity id the customer who is buying the shoes and the relationship to sale is the purchase of the shoes being brought. It also supports for know the demographic of 
+ the customer who wants to buy each shoes in the store. 
+The third entity is the sales is the products is being purchased at a price and the relationship it has to costomer and products is the cost of the shoesbeing sold to person purchasing the shoe. 
+It also help to calculate and collect the amount data of costomer who are purchasing the shoes in the store.  
+The Inventory is the the amount of shoes being stock into the store and the relationship it has to the product is how many of the customer are buying the amount shoes being sold into the store.
+It can very usful to track the stock of shoes being sold which leads to high demand of costumers that would want to buy more shoes in the store. 
